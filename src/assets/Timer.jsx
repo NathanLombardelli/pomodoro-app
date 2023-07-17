@@ -7,10 +7,6 @@ export const Timer = (props) => {
     let renderMap = [false, false, true, true];
     let labels = ['Minutes', 'Seconds'];
 
-    function handleComplete() {
-        console.log('finish');
-    }
-
 
     return (
             <FlipClockCountdown to={new Date().getTime() + props.time}
@@ -19,7 +15,7 @@ export const Timer = (props) => {
                                 labels={labels}
                                 labelStyle={{color: '#000000'}}
                                 digitBlockStyle={{color: '#ffffff'}}
-                                onComplete={handleComplete}>
+                                onComplete={props.onComplete}>
 
 
             </FlipClockCountdown>

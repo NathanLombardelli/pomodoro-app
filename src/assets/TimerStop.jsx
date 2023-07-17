@@ -8,17 +8,16 @@ export const TimerStop = (props) => {
   let secondsFirstDigit = 0;
   let secondsSecondDigit = 0;
 
-  if(props.timerMin > 0) {
+  if(props.timerMin >= 1) {
     minutesFirstDigit = Math.trunc(props.timerMin / 10);
     minutesSecondDigit = Math.trunc((((props.timerMin / 10) - Math.floor(props.timerMin / 10))) * 10);
   }
 
-  if(props.timerSec > 0) {
+  if(props.timerSec > 1) {
     secondsFirstDigit = Math.trunc(props.timerSec / 10);
     secondsSecondDigit = Math.trunc((((props.timerSec / 10) - Math.floor(props.timerSec / 10))) * 10);
   }
 
-  console.log(minutesFirstDigit + "" + minutesSecondDigit + ":" + secondsFirstDigit + "" + secondsSecondDigit )
 
   return (
 
