@@ -22,6 +22,7 @@ function App() {
 
     function pause(){
 
+
         setVisible(false);
 
     }
