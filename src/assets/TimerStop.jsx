@@ -3,16 +3,25 @@ import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 
 export const TimerStop = (props) => {
 
-  let minutesFirstDigit = Math.trunc(props.timerMin/10);
-  let minutesSecondDigit = Math.trunc((((props.timerMin/10) - Math.floor(props.timerMin/10)))*10);
-  let secondsFirstDigit = Math.trunc(props.timersec/10);
-  let secondsSecondDigit = Math.trunc((((props.timersec/10) - Math.floor(props.timersec/10)))*10);
+  let minutesFirstDigit = 0
+  let minutesSecondDigit = 0;
+  let secondsFirstDigit = 0;
+  let secondsSecondDigit = 0;
+
+  if(props.timerMin > 0) {
+    minutesFirstDigit = Math.trunc(props.timerMin / 10);
+    minutesSecondDigit = Math.trunc((((props.timerMin / 10) - Math.floor(props.timerMin / 10))) * 10);
+  }
+
+  if(props.timerSec > 0) {
+    secondsFirstDigit = Math.trunc(props.timerSec / 10);
+    secondsSecondDigit = Math.trunc((((props.timerSec / 10) - Math.floor(props.timerSec / 10))) * 10);
+  }
 
   console.log(minutesFirstDigit + "" + minutesSecondDigit + ":" + secondsFirstDigit + "" + secondsSecondDigit )
 
   return (
 
-      // eslint-disable-next-line react/prop-types
       <div className="_qWTcH _1tbqx">
         <div className="_3cpN7">
           <div className="_2aOn7" style={{color:'#000000'}}>Minutes</div>

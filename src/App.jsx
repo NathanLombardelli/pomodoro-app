@@ -1,22 +1,28 @@
 import './style.css'
 import {Title} from "./assets/Title.jsx";
 import  {Timer} from "./assets/Timer.jsx"
-import React, {useState} from 'react';
-import ReactDOM from "react-dom/client";
+import {useState} from 'react';
 import {TimerStop} from "./assets/TimerStop.jsx";
 
-var minutes = 1;
-var secondes = 36;
+var minutes = 0;
+var secondes = 0;
+
+let time = 60 * 1000;
+//60.000 = 1min
 
 function App() {
 
     const [visible, setVisible] = useState(true);
 
+
     function tick({ timeDelta, completed }) {
 
         if (!completed) {
+            console.log("min : " + timeDelta.minutes);
+            console.log("sec : " + timeDelta.seconds);
             minutes = timeDelta.minutes;
             secondes = timeDelta.seconds;
+            time = (secondes+(minutes*60)) * 1000;
         }
     }
 
@@ -39,7 +45,7 @@ function App() {
     <>
         <Title text={"Hello World"}/>
         <div id={'clock'}>
-            {visible ? <Timer time={minutes} tick={tick}/> : <TimerStop timerMin={minutes} timersec={secondes} ></TimerStop>}
+            {visible ? <Timer time={time} tick={tick}></Timer> : <TimerStop timeMin={minutes} timerSec={secondes} ></TimerStop>}
         </div>
         <button onClick={pause}>Pause</button>
         <button onClick={play}>Play</button>

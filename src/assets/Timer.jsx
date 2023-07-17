@@ -13,8 +13,7 @@ export const Timer = (props) => {
 
 
     return (
-        <div id={'clock'}>
-            <FlipClockCountdown to={new Date().getTime() + props.time* 60000}
+            <FlipClockCountdown to={new Date().getTime() + props.time}
                                 onTick={props.tick}
                                 renderMap={renderMap}
                                 labels={labels}
@@ -22,8 +21,8 @@ export const Timer = (props) => {
                                 digitBlockStyle={{color: '#ffffff'}}
                                 onComplete={handleComplete}>
 
+
             </FlipClockCountdown>
-        </div>
     );
 
 
