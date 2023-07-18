@@ -1,0 +1,3 @@
+npx vite build
+add models to dist
+change js link to ./nomModel

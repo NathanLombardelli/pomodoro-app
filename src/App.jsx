@@ -5,8 +5,8 @@ import {useState} from 'react';
 import {TimerStop} from "./assets/TimerStop.jsx";
 
 let minutes = 1;
-let secondes = 15;
-let initTime = 75 * 1000;
+let secondes = 0;
+let initTime = 60 * 1000;
 let time = initTime;
 //60.000 = 1min
 function App() {
@@ -21,6 +21,9 @@ function App() {
             secondes = timeDelta.seconds;
             time = (secondes+(minutes*60)) * 1000;
         }
+
+        document.title = minutes + ' : ' + secondes;
+
     }
 
     function pause(){
