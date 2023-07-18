@@ -4,9 +4,9 @@ import  {Timer} from "./assets/Timer.jsx"
 import {useState} from 'react';
 import {TimerStop} from "./assets/TimerStop.jsx";
 
-let minutes = 0;
-let secondes = 20;
-let initTime = 20 * 1000;
+let minutes = 1;
+let secondes = 15;
+let initTime = 75 * 1000;
 let time = initTime;
 //60.000 = 1min
 function App() {
@@ -25,32 +25,38 @@ function App() {
 
     function pause(){
         setVisible(false);
-        console.log(visible);
     }
 
     function play(){
         setVisible(true);
-        console.log(visible);
     }
 
     function complete() {
         setVisible(false);
-        console.log(visible);
     }
 
+
+    function updatePause() {
+        setVisible(true);
+        setTimeout(pause,100);
+    }
 
     function addMinute() {
         if(minutes < 59) {
             time += 60000;
             minutes += 1;
         }
-        play();
-        pause();
+        updatePause();
     }
 
     function reset() {
 
         time = initTime;
+        let totSec = initTime /1000;
+        minutes = totSec/60;
+        secondes = totSec%60;
+
+        updatePause();
 
     }
     function removeMinute() {
@@ -58,6 +64,7 @@ function App() {
            time -= 60000;
            minutes -= 1;
        }
+        updatePause();
     }
 
     return (
