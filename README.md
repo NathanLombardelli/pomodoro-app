@@ -8,6 +8,8 @@
 
 Projet réalisé dans le cadre de la formation BeCode
 
+:egg:
+
 ## Team
 
 Nathan Lombardelli
@@ -17,5 +19,6 @@ Nathan Lombardelli
 liens vers la [page](https://gentle-kangaroo-e0641c.netlify.app)
 
 ## Library
-
-https://github.com/sLeeNguyen/react-flip-clock-countdown#render-a-react-component-when-countdown-is-complete
+[React](https://react.dev)<br>
+[flip-clock](https://github.com/sLeeNguyen/react-flip-clock-countdown#render-a-react-component-when-countdown-is-complete)<br>
+[Three.js](https://threejs.org)<br>

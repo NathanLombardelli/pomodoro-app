@@ -58,16 +58,25 @@ fbxLoader.load(
 camera.position.z = 5;
 // camera.position.y = -1;
 
+let speedX = 0;
+let speedY = 0.00065;
+let speedCam = 0;
+
+setTimeout(()=> document.getElementById('title').addEventListener('click',()=>{
+    speedX = 0.065;
+    speedY = 0.065;
+    speedCam = 0.05;
+}),5000);
+
 function animate() {
 
     requestAnimationFrame( animate );
 
-
-
-
     if (pomodoro) {
 
-        pomodoro.rotation.y -= 0.00065;
+        pomodoro.rotation.y -= speedY;
+        pomodoro.rotation.x -= speedX;
+        camera.rotation.y -= speedCam;
     }
 
 
